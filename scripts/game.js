@@ -3,7 +3,11 @@ var gameBoard=function(){
     
     
 } 
-                   
+ var advanceTurn = function(board, choice){
+     var newBoard = board;
+     newBoard[choice] = "X";
+     return newBoard;
+ };                  
 var score = function(board, player){
     
     if (isWin(board, player)){

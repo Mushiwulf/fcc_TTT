@@ -9,3 +9,8 @@ test ("score test", function (assert) {
     assert.equal(score(["O", "X", "O", "O", "X", "X", "X", "O", "O"], "O"), 0, "Draw should return 0");
 });
 
+var testBoard = ["E", "E", "X", "O","O", "X", "O", "X", "X"];
+var advancedTestBoard = ["X", "E", "X", "O","O", "X", "O", "X", "X"]
+test ("advance test", function(assert){
+    assert.deepEqual(advanceTurn(testBoard, 0), advancedTestBoard, "Advances correctly");
+});
