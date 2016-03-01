@@ -1,13 +1,31 @@
  
-var gameBoard=function(){    
+var gameBoard={    
+    turns:0,
     
     
-} 
+};
+
+var initializeGame = function(){
+    gameBoard.turns =0;
+};
  var advanceTurn = function(board, choice){
      var newBoard = board;
      newBoard[choice] = "X";
+     gameBoard.turns++;
      return newBoard;
- };                  
+ };
+ 
+ var emptySquares = function(board){
+    var indices = [];
+    
+    var element = 'E';
+    var idx = board.indexOf(element);
+    while (idx != -1) {
+        indices.push(idx);
+        idx = board.indexOf(element, idx + 1);
+    }
+    return indices;
+ }               
 var score = function(board, player){
     
     if (isWin(board, player)){
