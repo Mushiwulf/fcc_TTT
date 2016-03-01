@@ -1,0 +1,1 @@
+This is a tic tac toe game where the player should be able to select a side and play an AI. The AI should be smart enough to never lose.
