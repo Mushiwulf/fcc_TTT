@@ -1,12 +1,13 @@
  
 var gameBoard={    
     turns:0,
-    
+    state: []
     
 };
 
 var initializeGame = function(){
     gameBoard.turns =0;
+    gameBoard.state = ["E", "E", "E", "E","E", "E", "E", "E", "E"]
 };
  var advanceTurn = function(board, choice){
      var newBoard = board;

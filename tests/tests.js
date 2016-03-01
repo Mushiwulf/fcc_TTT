@@ -5,7 +5,7 @@ QUnit.module( "module A", {
   },
   afterEach: function() {
     // clean up after each test
-    testBoard = ["E", "E", "X", "O","O", "X", "O", "X", "X"];
+    
   }
 });
 test ("score test", function (assert) {
@@ -30,4 +30,14 @@ test ("find empty squares", function(assert){
 
 test("game turns", function(assert){
    assert.equal(gameBoard.turns, 0); 
+});
+
+test("sequence", function(assert){
+    initializeGame();
+    advanceTurn(gameBoard.state, 1);
+    assert.equal(gameBoard.turns, 1, "Turns is 1");
+    assert.deepEqual(gameBoard.state, ["E", "X", "E", "E","E", "E", "E", "E", "E"]);
+    advanceTurn(gameBoard.state, 0);
+    assert.equal(gameBoard.turns, 2, "Turns is 2");
+    assert.deepEqual(gameBoard.state, ["X", "X", "E", "E","E", "E", "E", "E", "E"]);
 });
