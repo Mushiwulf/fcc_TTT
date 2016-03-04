@@ -21,13 +21,14 @@ test ("score test", function (assert) {
 });
 
 var testBoard = ["E", "E", "X", "O","O", "X", "O", "X", "X"];
+var testBoard2 = ["E", "E", "X", "O","O", "X", "O", "X", "X"];
 var advancedTestBoard = ["X", "E", "X", "O","O", "X", "O", "X", "X"]
 test ("advance test", function(assert){
     assert.deepEqual(advanceTurn(testBoard, 0), advancedTestBoard, "Advances correctly");
 });
 
 test ("find empty squares", function(assert){
-    assert.deepEqual(emptySquares(testBoard), [0,1], "Finds the empty squares");
+    assert.deepEqual(emptySquares(testBoard2), [0,1], "Finds the empty squares");
 });
 
 test("game turns", function(assert){
