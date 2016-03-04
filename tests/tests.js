@@ -1,7 +1,9 @@
 QUnit.module( "module A", {
+  
   beforeEach: function() {
     // prepare something for all following tests
-    initializeGame();
+    
+    initializeGame(gameBoard);
   },
   afterEach: function() {
     // clean up after each test
@@ -33,7 +35,7 @@ test("game turns", function(assert){
 });
 
 test("sequence", function(assert){
-    initializeGame();
+    //initializeGame();
     advanceTurn(gameBoard.state, 1);
     assert.equal(gameBoard.turns, 1, "Turns is 1");
     assert.deepEqual(gameBoard.state, ["E", "X", "E", "E","E", "E", "E", "E", "E"]);
